@@ -1,0 +1,29 @@
+2018-09-19 22:24:26.091 WIB [7512] LOG:  could not bind IPv6 address "::1": Address already in use
+2018-09-19 22:24:26.091 WIB [7512] HINT:  Is another postmaster already running on port 5432? If not, wait a few seconds and retry.
+2018-09-19 22:24:26.127 WIB [7512] LOG:  could not bind IPv4 address "127.0.0.1": Address already in use
+2018-09-19 22:24:26.127 WIB [7512] HINT:  Is another postmaster already running on port 5432? If not, wait a few seconds and retry.
+2018-09-19 22:24:26.127 WIB [7512] WARNING:  could not create listen socket for "localhost"
+2018-09-19 22:24:26.127 WIB [7512] FATAL:  could not create any TCP/IP sockets
+2018-09-19 22:24:26.127 WIB [7512] LOG:  database system is shut down
+2018-09-19 22:25:16.559 WIB [7911] LOG:  listening on IPv6 address "::1", port 5432
+2018-09-19 22:25:16.559 WIB [7911] LOG:  listening on IPv4 address "127.0.0.1", port 5432
+2018-09-19 22:25:16.559 WIB [7911] LOG:  listening on Unix socket "/tmp/.s.PGSQL.5432"
+2018-09-19 22:25:16.616 WIB [7912] LOG:  database system was shut down at 2018-09-19 22:24:00 WIB
+2018-09-19 22:25:16.641 WIB [7911] LOG:  database system is ready to accept connections
+2018-09-19 22:25:56.897 WIB [8109] FATAL:  lock file "postmaster.pid" already exists
+2018-09-19 22:25:56.897 WIB [8109] HINT:  Is another postmaster (PID 7911) running in data directory "/usr/local/var/yacht"?
+2018-09-19 22:28:56.549 WIB [8264] FATAL:  role "yachtly" does not exist
+2018-09-19 22:57:17.515 WIB [9685] ERROR:  relation "Users" does not exist at character 13
+2018-09-19 22:57:17.515 WIB [9685] STATEMENT:  INSERT INTO "Users" ("id","createdAt","updatedAt") VALUES (DEFAULT,'2018-09-19 15:57:17.308 +00:00','2018-09-19 15:57:17.308 +00:00') RETURNING *;
+2018-09-19 22:59:01.315 WIB [9779] ERROR:  relation "Users" does not exist at character 13
+2018-09-19 22:59:01.315 WIB [9779] STATEMENT:  INSERT INTO "Users" ("id","createdAt","updatedAt") VALUES (DEFAULT,'2018-09-19 15:59:01.212 +00:00','2018-09-19 15:59:01.212 +00:00') RETURNING *;
+2018-09-19 23:26:19.108 WIB [12563] ERROR:  operator does not exist: character varying = integer at character 36
+2018-09-19 23:26:19.108 WIB [12563] HINT:  No operator matches the given name and argument type(s). You might need to add explicit type casts.
+2018-09-19 23:26:19.108 WIB [12563] STATEMENT:  DELETE FROM "Users" WHERE "userID" = 1
+2018-09-19 23:35:36.881 WIB [13087] ERROR:  duplicate key value violates unique constraint "Users_email_key"
+2018-09-19 23:35:36.881 WIB [13087] DETAIL:  Key (email)=(dmsyudha22@gmail.com) already exists.
+2018-09-19 23:35:36.881 WIB [13087] STATEMENT:  INSERT INTO "Users" ("id","userID","name","email","phoneNumber","address","createdAt","updatedAt") VALUES (DEFAULT,'dmsyudha22','dmsyudha22','dmsyudha22@gmail.com','081392851119','murangan','2018-09-19 16:35:36.873 +00:00','2018-09-19 16:35:36.873 +00:00') RETURNING *;
+2018-09-19 23:53:59.104 WIB [7911] LOG:  worker process: logical replication launcher (PID 7918) exited with exit code 1
+2018-09-19 23:53:59.104 WIB [7911] LOG:  received smart shutdown request
+2018-09-19 23:53:59.105 WIB [7913] LOG:  shutting down
+2018-09-19 23:53:59.198 WIB [7911] LOG:  database system is shut down

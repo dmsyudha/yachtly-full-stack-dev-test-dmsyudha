@@ -1,0 +1,78 @@
+<!doctype html>
+<html ng-app="userApp">
+
+<head>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.2/angular.min.js"></script>
+  <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.min.css">
+  <script src="/js/user.js"></script>
+</head>
+
+<body ng-controller="userAppController as userList">
+  <div class="container">
+    <h1>Add User</h1>
+    <form ng-submit="userList.addUser()" >
+      <fieldset>
+        <label>User ID</label>
+        <input type="text" class="input-large" ng-model="userList.userID" placeholder="Input your user ID">
+      </fieldset>
+      <fieldset>
+        <label>Name</label>
+        <input type="text" class="input-large" ng-model="userList.name" placeholder="Input your name">
+      </fieldset>
+      <fieldset>
+        <label>Email</label>
+        <input type="email" class="input-large" ng-model="userList.email" placeholder="Input your email">
+      </fieldset>
+      <fieldset>
+        <label>Phone Number</label>
+        <input type="number" class="input-large" ng-model="userList.phoneNumber" placeholder="Input your phone number">
+      </fieldset>
+      <fieldset>
+        <label>Address</label>
+        <input type="text" class="input-large" ng-model="userList.address" placeholder="Input your address">
+      </fieldset>
+      <button class="btn btn-primary" type="submit" value="add">Save changes</button>
+    </form>
+
+    <h1>List User</h1>
+    <table class="table" >
+      <thead>
+        <tr>
+          <th>User ID</th>
+          <th>Name</th>
+          <th>Email</th>
+          <th>Phone Number</th>
+          <th>Address</th>
+          <th>Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr ng-repeat="user in userList.users">
+          <td>{{user.userID}}</td>
+          <td>{{user.name}}</td>
+          <td>{{user.email}}</td>
+          <td>{{user.phoneNumber}}</td>
+          <td>{{user.address}}</td>
+          <td>
+            <div class="btn-group">
+              <button class="btn dropdown-toggle" data-toggle="dropdown">
+                Action
+                <span class="caret"></span>
+              </button>
+              <ul class="dropdown-menu">
+                <li><a href="#" ng-click="userList.deleteUser(user.userID)">Delete</a></li>
+                <li><a href="#" ng-click="userList.updateUser(user,1)">Update</a></li>
+              </ul>
+            </div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+</body>
+
+<script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+<script src="https://netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/js/bootstrap.min.js"></script>
+
+</html>
